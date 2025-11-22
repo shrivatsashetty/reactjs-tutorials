@@ -1,0 +1,16 @@
+nav {
+    background-color: sandybrown;
+    padding: 10px;
+}
+
+ul {
+    column-gap: 15px;
+}
+
+li {
+    list-style: none;
+}
+
+li a:link {
+    text-decoration: none;
+}
