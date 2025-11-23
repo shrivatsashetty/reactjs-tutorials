@@ -1,9 +1,8 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import Football from './Football.jsx'
-import Goal from './Goal.jsx'
-import App from './App.jsx'
+import { createRoot } from "react-dom/client";
+import FootballApp from "./FootballApp/FootballApp";
+import Car from "./CarApp/Car";
 
-createRoot(document.getElementById('root')).render(
-  <App/>
-)
+createRoot(document.getElementById("root")).render(
+    // <FootballApp />
+    <Car brand="Audi"/>
+);
