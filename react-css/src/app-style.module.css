@@ -1,0 +1,23 @@
+.bg-blue {
+    background-color: DodgerBlue;
+}
+
+.col-red {
+  color: red;
+}
+
+.sans-serif {
+  font-family: sans-serif;
+}
+
+.p-40 {
+    padding: 40px;
+}
+
+.sans-serif {
+    font-family: Sans-Serif;
+}
+
+.txt-center {
+    text-align: center;
+}
