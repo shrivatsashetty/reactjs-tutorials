@@ -5,7 +5,7 @@ function App() {
     return (
         <>
             <div>
-                <Suspense fallback={<Loading/>}>
+                <Suspense fallback={<Loading />}>
                     <Fruits />
                 </Suspense>
             </div>
@@ -14,7 +14,7 @@ function App() {
 }
 
 function Loading() {
-  return <h2>🌀 Loading...</h2>;
+    return <h2>🌀 Loading...</h2>;
 }
 
 export default App;
