@@ -1,3 +1,6 @@
+// use NavLink instead of Link if the link is a belongs to Navbar
+// this provides us with option to style visited or active links
+
 import { NavLink, Outlet } from "react-router-dom";
 
 function ProfilesPage() {
