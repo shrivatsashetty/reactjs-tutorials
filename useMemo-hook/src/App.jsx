@@ -1,35 +1,37 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState, useMemo } from "react";
+
+import "./App.css";
+
+import { initialItems } from "./utils";
 
 function App() {
-  const [count, setCount] = useState(0)
+    const [count, setCount] = useState(0);
 
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    // we don't require a setter method for this state since we are not going to change it
+    const [items] = useState(initialItems); 
+
+    const selectedItem = useMemo(
+        // the bleow function will be run to recompute selected item only if 'items' array changes
+        () => items.find((item) => item.isSelected),
+        [items]
+    );
+
+    console.log(selectedItem);
+
+    return (
+        <div>
+            <h1>Count: {count}</h1>
+            <h2>Selected Item: {selectedItem?.id} </h2>
+            <button
+                type="button"
+                onClick={() => {
+                    setCount(count + 1);
+                }}
+            >
+                Increment
+            </button>
+        </div>
+    );
 }
 
-export default App
+export default App;
